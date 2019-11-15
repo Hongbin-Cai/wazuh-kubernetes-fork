@@ -44,7 +44,7 @@ data:
 
       <!-- Choose between "plain", "json", or "plain,json" for the format of internal logs -->
       <logging>
-        <log_format>plain</log_format>
+        <log_format>plain,json</log_format>
       </logging>
 
       <remote>
@@ -79,14 +79,14 @@ data:
       </rootcheck>
 
       <wodle name="open-scap">
-        <disabled>yes</disabled>
+        <disabled>no</disabled>
         <timeout>1800</timeout>
         <interval>1d</interval>
         <scan-on-start>yes</scan-on-start>
       </wodle>
 
       <wodle name="cis-cat">
-        <disabled>yes</disabled>
+        <disabled>no</disabled>
         <timeout>1800</timeout>
         <interval>1d</interval>
         <scan-on-start>yes</scan-on-start>
@@ -97,7 +97,7 @@ data:
 
       <!-- Osquery integration -->
       <wodle name="osquery">
-        <disabled>yes</disabled>
+        <disabled>no</disabled>
         <run_daemon>yes</run_daemon>
         <log_path>/var/log/osquery/osqueryd.results.log</log_path>
         <config_path>/etc/osquery/osquery.conf</config_path>
@@ -118,19 +118,19 @@ data:
       </wodle>
 
       <wodle name="vulnerability-detector">
-        <disabled>yes</disabled>
+        <disabled>no</disabled>
         <interval>1m</interval>
         <run_on_start>yes</run_on_start>
         <feed name="ubuntu-18">
-          <disabled>yes</disabled>
+          <disabled>no</disabled>
           <update_interval>1h</update_interval>
         </feed>
         <feed name="redhat-7">
-          <disabled>yes</disabled>
+          <disabled>no</disabled>
           <update_interval>1h</update_interval>
         </feed>
         <feed name="debian-9">
-          <disabled>yes</disabled>
+          <disabled>no</disabled>
           <update_interval>1h</update_interval>
         </feed>
       </wodle>
