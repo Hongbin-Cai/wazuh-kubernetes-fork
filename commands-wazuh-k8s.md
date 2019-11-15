@@ -10,6 +10,9 @@ kubectl apply -f elastic_stack/elasticsearch/elasticsearch-svc.yaml
 kubectl apply -f elastic_stack/elasticsearch/single-node/elasticsearch-api-svc.yaml
 kubectl apply -f elastic_stack/elasticsearch/single-node/elasticsearch-sts.yaml
 
+kubectl get pods
+kubectl config current-context
+
 # 
 kubectl apply -f elastic_stack/kibana/kibana-svc.yaml
 kubectl apply -f elastic_stack/kibana/nginx-svc.yaml

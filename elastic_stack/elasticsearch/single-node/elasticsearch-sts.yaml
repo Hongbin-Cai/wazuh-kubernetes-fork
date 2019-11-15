@@ -13,6 +13,7 @@ metadata:
   name: wazuh-elasticsearch
   namespace: wazuh
 spec:
+  #nodeName: gke-wlk8stest-wlk8stestpool-6f872869-8gm0
   replicas: 1
   selector:
     matchLabels:
