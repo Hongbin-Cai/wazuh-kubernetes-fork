@@ -10,9 +10,9 @@
 apiVersion: storage.k8s.io/v1
 kind: StorageClass
 metadata:
-  name: gp2-encrypted-retained
-provisioner: kubernetes.io/aws-ebs
+  name: gce-pd-encrypted-retained
+provisioner: kubernetes.io/gce-pd
 parameters:
   encrypted: 'true'
-  type: gp2
+  type: pd-standard
 reclaimPolicy: Retain  # Useful in case you delete the PersistentVolumeClaim

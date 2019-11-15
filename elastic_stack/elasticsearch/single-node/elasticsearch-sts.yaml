@@ -86,7 +86,7 @@ spec:
       spec:
         accessModes:
           - ReadWriteOnce
-        storageClassName: gp2-encrypted-retained
+        storageClassName: gce-pd-encrypted-retained
         resources:
           requests:
             storage: 30Gi
