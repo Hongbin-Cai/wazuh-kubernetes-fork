@@ -38,6 +38,8 @@ spec:
               name: kibana
           env:
             - name: ELASTICSEARCH_URL
-              value: 'http://elasticsearch:9200'
+            # endpoint of elasticsearch service
+            # ? why there is wazuh-elasticsearch service with no endpoint
+              value: 'http://10.127.15.252:9200'
             - name: NODE_OPTIONS
               value: '--max-old-space-size=512'
