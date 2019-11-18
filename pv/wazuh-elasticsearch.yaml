@@ -10,10 +10,10 @@ spec:
   capacity:
     storage: 30Gi
   # volumeMode: Filesystem
-  persistentVolumeReclaimPolicy: Recycle
+  # persistentVolumeReclaimPolicy: Recycle
 #  mountOptions:
 #    - hard
 #    - nfsvers=4.1
   hostPath:
-    path: "/usr/share/elasticsearch/data"
+    path: "/"
 #    server: 172.17.0.2

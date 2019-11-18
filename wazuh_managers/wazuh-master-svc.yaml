@@ -17,7 +17,8 @@ metadata:
     # dns: route53
   annotations:
     # domainName: 'changeme'
-    service.beta.kubernetes.io/aws-load-balancer-backend-protocol: tcp
+    #service.beta.kubernetes.io/aws-load-balancer-backend-protocol: tcp
+    cloud.google.com/load-balancer-type: "Internal"
 spec:
   type: LoadBalancer
   selector:
