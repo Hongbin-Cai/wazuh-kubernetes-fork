@@ -1,0 +1,27 @@
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+  name: wazuh-ingress
+  namespace: wazuh
+  annotations:
+    ingress.kubernetes.io/rewrite-target: /
+spec:
+  rules:
+  - http:
+      paths:
+        - path: /wazuh-manager-api
+          backend:
+            serviceName: wazuh
+            servicePort: 55000
+        - path: /wazuh-manager-registration
+          backend:
+            serviceName: wazuh
+            servicePort: 1515
+        - path: /wazuh-logstash-beat
+          backend:
+            serviceName: logstash
+            servicePort: 5000
+        - path: /wazuh-kibana
+          backend:
+            serviceName: kibana
+            servicePort: 5601

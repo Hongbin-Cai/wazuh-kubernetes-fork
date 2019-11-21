@@ -13,7 +13,6 @@ metadata:
   name: wazuh-elasticsearch
   namespace: wazuh
 spec:
-  #nodeName: gke-wlk8stest-wlk8stestpool-6f872869-8gm0
   replicas: 1
   selector:
     matchLabels:
@@ -74,7 +73,7 @@ spec:
               value: node-1
           volumeMounts:
             - name: wazuh-elasticsearch
-              mountPath: /usr/share/elasticsearch/data
+              mountPath: /home/workland/software/elasticsearch/data
           ports:
             - containerPort: 9200
               name: es-rest

@@ -1,11 +1,13 @@
 
-```bash
 
+
+```bash
 # create k8s namespace,storageClass
 kubectl apply -f base/wazuh-ns.yaml
 kubectl apply -f base/gce-pd-storage-class.yaml
 
 # create PVs
+kubectl get pv -n wazuh
 kubectl apply -f pv/wazuh-elasticsearch.yaml
 kubectl apply -f pv/wazuh-manager-master.yaml
 

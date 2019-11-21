@@ -15,5 +15,5 @@ spec:
 #    - hard
 #    - nfsvers=4.1
   hostPath:
-    path: "/"
+    path: "/var/wazuh-manager-master"
 #    server: 172.17.0.2
