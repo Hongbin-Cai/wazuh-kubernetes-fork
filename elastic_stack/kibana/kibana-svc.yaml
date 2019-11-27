@@ -14,10 +14,19 @@ metadata:
   namespace: wazuh
   labels:
     app: wazuh-kibana
+  annotations: # JUST FOR TESTING
+    cloud.google.com/load-balancer-type: "External"
 spec:
+  type: LoadBalancer
   selector:
     app: wazuh-kibana
   ports:
     - name: kibana
       port: 5601
       targetPort: 5601
+  # selector:
+  #   app: wazuh-kibana
+  # ports:
+  #   - name: kibana
+  #     port: 5601
+  #     targetPort: 5601

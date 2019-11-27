@@ -17,11 +17,15 @@ spec:
           backend:
             serviceName: wazuh
             servicePort: 1515
-        - path: /wazuh-logstash-beat
-          backend:
-            serviceName: logstash
-            servicePort: 5000
-        - path: /wazuh-kibana
-          backend:
-            serviceName: kibana
-            servicePort: 5601
+        # - path: /wazuh-logstash-beat
+        #   backend:
+        #     serviceName: logstash
+        #     servicePort: 5000
+        # - path: /wazuh-kibana
+        #   backend:
+        #     serviceName: kibana
+        #     servicePort: 5601
+        # - path: /wazuh-elasticsearch
+        #   backend:
+        #     serviceName: wazuh-elasticsearch
+        #     servicePort: 9200

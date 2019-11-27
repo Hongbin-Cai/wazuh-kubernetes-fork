@@ -40,6 +40,6 @@ spec:
             - name: ELASTICSEARCH_URL
             # endpoint of elasticsearch service
             # ? why there is wazuh-elasticsearch service with no endpoint
-              value: 'http://10.127.15.252:9200'
+              value: 'http://10.127.10.195:9200'
             - name: NODE_OPTIONS
               value: '--max-old-space-size=512'
