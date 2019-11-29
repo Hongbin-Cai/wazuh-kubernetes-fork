@@ -31,6 +31,15 @@ spec:
         - name: config
           configMap:
             name: wazuh-manager-master-conf
+      initContainers:
+        - name: fix-tail-mail-log-no-such-file
+          image: busybox
+          command:
+            - touch 
+            - /var/log/mail.log
+          volumeMounts:
+            - name: wazuh-manager-master
+              mountPath: /var/log
       containers:
         - name: wazuh-manager
           image: 'wazuh/wazuh:3.9.0_6.7.1'
