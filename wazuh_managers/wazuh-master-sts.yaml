@@ -51,6 +51,8 @@ spec:
             - name: wazuh-manager-master
               mountPath: /etc/postfix
           ports:
+            - containerPort: 1514
+              name: agentlog
             - containerPort: 1515
               name: registration
             - containerPort: 1516

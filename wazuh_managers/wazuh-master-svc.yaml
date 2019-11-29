@@ -31,3 +31,6 @@ spec:
     - name: api
       port: 55000
       targetPort: 55000
+    - name: agentlog
+      port: 1514
+      targetPort: 1514
