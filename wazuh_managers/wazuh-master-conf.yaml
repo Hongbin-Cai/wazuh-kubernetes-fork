@@ -125,7 +125,11 @@ data:
           <disabled>no</disabled>
           <update_interval>1h</update_interval>
         </feed>
-        <feed name="redhat-7">
+        <feed name="ubuntu-16">
+          <disabled>no</disabled>
+          <update_interval>1h</update_interval>
+        </feed>
+        <feed name="redhat">
           <disabled>no</disabled>
           <update_interval>1h</update_interval>
         </feed>

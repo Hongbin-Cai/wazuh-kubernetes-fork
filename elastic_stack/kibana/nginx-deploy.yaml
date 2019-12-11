@@ -39,7 +39,7 @@ spec:
             - name: NGINX_NAME
               value: 'nginxfoo'
             - name: NGINX_PWD
-              value: 'bar'
+              value: 'nginxbar'
           ports:
             - containerPort: 80
             - containerPort: 443
