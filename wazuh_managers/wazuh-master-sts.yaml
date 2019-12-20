@@ -31,15 +31,6 @@ spec:
         - name: config
           configMap:
             name: wazuh-manager-master-conf
-      initContainers:
-        - name: fix-tail-mail-log-no-such-file
-          image: busybox
-          command:
-            - touch 
-            - /var/log/mail.log
-          volumeMounts:
-            - name: wazuh-manager-master
-              mountPath: /var/log
       containers:
         - name: wazuh-manager
           # image: 'wazuh/wazuh:3.9.0_6.7.1'
@@ -59,10 +50,6 @@ spec:
               mountPath: /wazuh-config-mount/etc/ossec.conf
               subPath: ossec.conf
               readOnly: true
-            - name: wazuh-manager-master
-              mountPath: /var/ossec/data
-            - name: wazuh-manager-master
-              mountPath: /etc/postfix
           ports:
             - containerPort: 1514
               name: agentlog
@@ -71,15 +58,4 @@ spec:
             - containerPort: 1516
               name: cluster
             - containerPort: 55000
-              name: api
-  volumeClaimTemplates:
-    - metadata:
-        name: wazuh-manager-master
-        namespace: wazuh
-      spec:
-        accessModes:
-          - ReadWriteOnce
-        storageClassName: gce-pd-encrypted-retained
-        resources:
-          requests:
-            storage: 50Gi
+              name: rest-api
