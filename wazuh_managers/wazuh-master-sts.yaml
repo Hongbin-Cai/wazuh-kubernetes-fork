@@ -28,9 +28,12 @@ spec:
       name: wazuh-manager-master
     spec:
       volumes:
-        - name: config
+        - name: wazuh-manager-master-conf-volume
           configMap:
             name: wazuh-manager-master-conf
+        - name: wazuh-master-filebeat-conf-volume
+          configMap:
+            name: wazuh-master-filebeat-conf
       containers:
         - name: wazuh-manager
           # image: 'wazuh/wazuh:3.9.0_6.7.1'
@@ -46,9 +49,13 @@ spec:
               cpu: 1
               memory: 512Mi
           volumeMounts:
-            - name: config
+            - name: wazuh-manager--master-conf-volume
               mountPath: /wazuh-config-mount/etc/ossec.conf
               subPath: ossec.conf
+              readOnly: true
+            - name: wazuh-master-filebeat-conf-volume
+              mountPath: /etc/filebeat/wazuh-template.json
+              subPath: wazuh-template.json
               readOnly: true
           ports:
             - containerPort: 1514
